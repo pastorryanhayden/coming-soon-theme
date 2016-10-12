@@ -1,43 +1,40 @@
 ---
 layout: default
 ---
-  <div class="header">
+
+
+  <div class="header" style="background: url({{site.data.welcome[0].main_image[0].url}}) no-repeat center center; background-size: cover;">
          <ul class="socialbar">
-           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-           <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-           <li><a href="#"><i class="fa fa-phone"></i></a></li>
+           {% if site.data.contact[0].Facebook %}<li><a href="{{site.data.contact[0].Facebook}}"><i class="fa fa-facebook"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Twitter %}<li><a href="{{site.data.contact[0].Twitter}}"><i class="fa fa-twitter"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Youtube %}<li><a href="{{site.data.contact[0].Youtube}}"><i class="fa fa-youtube"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Church_email %}<li><a href="mailto:{{site.data.contact[0].Church_email}}"><i class="fa fa-envelope"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Phone_number %}<li><a href="tel:{{site.data.contact[0].Phone_number}}"><i class="fa fa-phone"></i></a></li>{% endif %}
         </ul><!--/socialbar-->
-      <img src="http://sitesforchurch.s3.amazonaws.com/victorylogo.png" alt="" class="logo">
-      <h1>We'd Love to see you this Sunday</h1>
-      <p>We are working on an amazing new website.  In the mean time, here is some basic information about our church:</p>
+      <img src="{{site.data.welcome[0].logo[0].url}}" alt="" class="logo">
+      <h1>{{site.data.welcome[0].main_heading}}</h1>
+      {{site.data.welcome[0].welcome_message | markdownify}}
       <h3><i class="fa fa-arrow-down"></i></h3>
     </div><!--/header-->
     <div class="main">
       <div class="services-info">
-          <h2>Our Services</h2>
-          <p>You are always welcome to join us for any one of our services. Here is some basic information about them: </p>
-          <h3>Sunday Services</h3>
-          <p>We have services every Sunday Morning at 10:30 AM and every Sunday Evening at 6:00 PM. We sing some hymns, pray together, and our pastor brings a message from the Bible. Our services rarely last longer than one hour and fifteen minutes.</p>
-          <h3>Sunday School</h3>
-          <p>We meet every Sunday at 9:30 AM for Sunday School. We have Sunday School classes for all ages and stages of life. Please check out our ministries page for more information about a Sunday School class.</p>
-          <h3>Midweek Prayer Meeting</h3>
-          <p>Every Wednesday at 7:00 PM we meet together for a time of fellowship and prayer. Our Wednesday services are more casual. We hear from a missionary (via video or a prayer letter), Pastor brings a very brief message on prayer, we take prayer requests and then we split up into various groups to pray. Childcare is provided.</p>
+          {{site.data.main[0].Main_message | markdownify }}
       </div><!--/services-info-->
       <div class="pastor-info">
-        <img src="http://sitesforchurch.s3.amazonaws.com/pastor-pic.png" alt="">
-        <h3>Meet Our Pastor</h3>
-        <p>Pastor Gary Ledbetter has served as the pastor at Victory since December 2013.  He has been in the pastorate for over 35 years.  He and his wife Linda want to be a blessing to you and your family.</p>
-        <p class="email"><i class="fa fa-envelope"></i> <a href="#">pastor@vbcwhiteville.org</a></p>
+        <img src="{{site.data.pastor[0].Pastor_thumbnail[0].url}}" alt="">
+        <h3>{{site.data.pastor[0].Pastor_heading}}</h3>
+        <p>{{site.data.pastor[0].Pastor_content}}</p>
+        <p class="email"><i class="fa fa-envelope"></i> <a href="mailto:{{site.data.pastor[0].Pastor_email}}">{{site.data.pastor[0].Pastor_email}}</a></p>
       </div><!--/pastor-info-->
     </div><!--/main-->
      <div class="map">
-       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3296.0975536346546!2d-78.7288047!3d34.297058!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89aa8b75613e4561%3A0x2667399805bc6ed5!2s2012+S+Madison+St%2C+Whiteville%2C+NC+28472!5e0!3m2!1sen!2sus!4v1473851530405" width="100%" height="420px" frameborder="0" style="border:0" allowfullscreen></iframe>
+       {{site.data.contact[0].Google_Maps_Embed}}
     </div><!--/map-->
     <div class="contact">
       <div class="contact-content">
           <h2>Contact Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloremque dicta voluptate esse aliquid quos quo error quis, voluptas a tempore sit, nisi iusto enim explicabo corporis eum laboriosam minus odit. Nulla enim veniam vel.</p>
-          <p class="email"><i class="fa fa-envelope"></i> <a href="#">pastor@vbcwhiteville.org</a></p>
+          {{site.data.contact[0].Contact_Message | markdownify }}
+          <p class="email"><i class="fa fa-envelope"></i> <a href="mailto:{{site.data.contact[0].Church_email}}">{{site.data.contact[0].Church_email}}</a></p>
           <p class="address">
 
           </p><!--/address-->
